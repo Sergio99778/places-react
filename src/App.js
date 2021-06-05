@@ -7,30 +7,19 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      numero: 0
-    };
     
-    this.updateNumero = this.updateNumero.bind(this);
-    
-  }
-
-  updateNumero() {
-    this.setState({
-      numero: this.state.numero + 1
-    });
   }
 
   render() {
     return (
       <section>
-        <div>
-          <div>
-            <Title title="Places"></Title>
-            <h2>{this.state.numero}</h2>
-            <button onClick={this.updateNumero}>Crear cuenta gratuita</button>
-            <img src={process.env.PUBLIC_URL + '/images/slondotpics.jpg' } alt="" height="300"/>
+        <div className="Header-background">
+          <div style={{"width":"80%", "margin": "0 auto"}}>
+            <div className="Header-main">
+              <Title title="Places"></Title>
+              <button >Crear cuenta gratuita</button>
+              <img className="Header-illustration" src={process.env.PUBLIC_URL + '/images/slondotpics.jpg' } alt=""/>
+            </div>
             <div>
               <ul>
                 <li>
