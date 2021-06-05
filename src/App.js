@@ -12,6 +12,8 @@ class App extends Component {
       numero: 0
     };
     
+    this.updateNumero = this.updateNumero.bind(this);
+    
   }
 
   updateNumero() {
@@ -27,7 +29,7 @@ class App extends Component {
           <div>
             <Title title="Places"></Title>
             <h2>{this.state.numero}</h2>
-            <button onClick={()=>{this.updateNumero()}}>Crear cuenta gratuita</button>
+            <button onClick={this.updateNumero}>Crear cuenta gratuita</button>
             <img src={process.env.PUBLIC_URL + '/images/slondotpics.jpg' } alt="" height="300"/>
             <div>
               <ul>
