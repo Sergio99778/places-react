@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import Title from './components/Title.js'
 import { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton'
+
+import Title from './components/Title.js'
+
+import './App.css';
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-    
-  }
-
   render() {
     return (
-      <section>
+      <MuiThemeProvider>
         <div className="Header-background">
           <div style={{"width":"80%", "margin": "0 auto"}}>
             <div className="Header-main">
               <Title title="Places"></Title>
-              <button >Crear cuenta gratuita</button>
+              <RaisedButton label="Crear cuenta gratuita" secondary={true}></RaisedButton>
               <img className="Header-illustration" src={process.env.PUBLIC_URL + '/images/slondotpics.jpg' } alt=""/>
             </div>
             <div>
@@ -38,7 +35,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-      </section>
+      </MuiThemeProvider>
     );
   }
   
