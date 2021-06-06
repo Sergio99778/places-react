@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton'
+import {Card, CardText} from 'material-ui/Card'
 
-import {indigo400} from 'material-ui/styles/colors'
+import {indigo400, redA400, lightBlueA400,amberA400} from 'material-ui/styles/colors'
 
 import Title from './components/Title.js'
 
@@ -21,20 +22,29 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div style={{'background-color': indigo400,'padding':'50px'}}>
+        <div style={{'backgroundColor': indigo400,'padding':'50px'}}>
           <ul>
-            <li>
-              <h3>Calificaciones con emociones</h3>
-              <p>Califica tus lugares con experiencias, no con numeros</p>
-            </li>
-            <li>
-              <h3>¿Sin internet? Sin problemas</h3>
-              <p>Places funciona sin internet o en conexiones lentas</p>
-            </li>
-            <li>
-              <h3>Tus lugares favoritos</h3>
-              <p>Define la lista de tus lugares favoritos</p>
-            </li>
+            <Card className="Header-Benefit">
+              <CardText style={{'backgroundColor':redA400}}>
+                <img style={{'width': '100%'}} src={process.env.PUBLIC_URL + '/images/heart.jpg'} alt="" />
+                <h3>Calificaciones con emociones</h3>
+                <p>Califica tus lugares con experiencias, no con numeros</p>
+              </CardText>
+            </Card>
+            <Card className="Header-Benefit">
+              <CardText style={{'backgroundColor':redA400}}>
+                <img style={{'width': '100%'}} src={process.env.PUBLIC_URL + '/images/no-internet.jpg'} alt="" />
+                <h3>¿Sin internet? Sin problemas</h3>
+                <p>Places funciona sin internet o en conexiones lentas</p>
+              </CardText>
+            </Card>
+            <Card className="Header-Benefit">
+              <CardText style={{'backgroundColor':redA400}}>
+                <img style={{'width': '100%'}} src={process.env.PUBLIC_URL + '/images/favorite.jpg'} alt="" />
+                <h3>Tus lugares favoritos</h3>
+                <p>Define la lista de tus lugares favoritos</p>
+              </CardText>
+            </Card>
           </ul>
         </div>
       </MuiThemeProvider>
