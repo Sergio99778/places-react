@@ -1,15 +1,39 @@
 import { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton'
-import {Card, CardText} from 'material-ui/Card'
+import {Card, CardText, CardMedia, CardTitle} from 'material-ui/Card'
 
-import {indigo400, redA400, lightBlueA400,amberA400, lightBlue400} from 'material-ui/styles/colors'
+import {indigo400, redA400, lightBlueA400,amberA400} from 'material-ui/styles/colors'
+
+import data from './requests/places'
 
 import Title from './components/Title.js'
 
 import './App.css';
 
 class App extends Component {
+
+  constructor(props){
+    super(props)
+    console.log(data)
+  }
+
+  places() {
+    return data.places.map(place => {
+      return(
+        <div className="col-xs-12 col-sm-4">
+          <Card>
+            <CardMedia>
+              <img src={process.env.PUBLIC_URL + place.imageURL} alt="" />
+            </CardMedia>
+            <CardTitle title={place.title}></CardTitle>
+            <CardText>{place.description}</CardText>
+          </Card>
+        </div>
+      );
+    })
+  }
+
   render() {
     return (
       <MuiThemeProvider>
@@ -65,8 +89,11 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div style={{'backgroundColor': indigo400,'padding':'50px'}}>
-          
+        <div style={{'backgroundColor': indigo400,'padding':'50px', 'color': 'white'}}>
+          <h3 style={{'fontSize':'24px'}}>Sitios populares</h3>
+          <div className="row">
+            {this.places()}
+          </div>
         </div>
       </MuiThemeProvider>
     );
