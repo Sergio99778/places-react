@@ -14,16 +14,13 @@ export default class PlaceCard extends React.Component {
       this.state = {
         show : true
       }
-
-      setInterval(() => this.setState({show: !this.state.show}),5000)
     }
 
     render() {
         return(
           <CSSTransition
-            timeout={5000}
             classNames='fade-scale'
-            in ={this.state.show}
+            in ={this.props.in}
           >
             <div className="col-xs-12 col-sm-4" key={this.props.index}>
               <Card>
