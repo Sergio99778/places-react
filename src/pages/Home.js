@@ -12,14 +12,29 @@ import data from '../requests/places'
 
 export default class Home extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            places: data.places
+        }
+
+        this.hidePlace = this.hidePlace.bind(this)
+    }
 
     places() {
-        return data.places.map((place,index) => {
+        return this.state.places.map((place,index) => {
           return(
-            <PlaceCard place={place} index={index}></PlaceCard>
+            <PlaceCard onRemove={this.hidePlace} place={place} index={index}></PlaceCard>
           );
         })
-      }
+    }
+
+    hidePlace(place) {
+        this.setState({
+            places: this.state.places.filter(el => el != place)
+        })
+    }
 
     render() {
         return(
