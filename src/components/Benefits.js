@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {Card, CardText, CardMedia, CardTitle} from 'material-ui/Card'
+import {Card, CardText} from 'material-ui/Card'
 
-import {indigo400, redA400, lightBlueA400,amberA400} from 'material-ui/styles/colors'
+import { redA400, lightBlueA400,amberA400} from 'material-ui/styles/colors'
 
 export default class Benefits extends React.Component {
     render() {
